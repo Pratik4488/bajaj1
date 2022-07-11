@@ -1,6 +1,8 @@
 const express = require('express')
 const path = require("path")
 const app = express();
+const dotenv = require("dotenv");
+dotenv.config();
 
 // // setting up public dir
 // app.use(express.static('public'));
@@ -72,6 +74,6 @@ app.post("/challenge", async (req, res)=>{
 })
 
 
-app.listen(9000, () => {
+app.listen(process.env.PORT|| 9000, () => {
     console.log("Server started...")
 })
